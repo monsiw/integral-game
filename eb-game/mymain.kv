@@ -1,0 +1,39 @@
+FloatLayout:
+    Background:
+        id: background
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: "savanna.jpg"                                       
+    EB:
+        id: eb
+        source: "elephant-bird1.png"
+        size_hint: None, None
+        size: 270, 270
+        pos: 0, -20
+    Food:
+        source: "plant.png"
+        size_hint: None, None
+        size: 330, 330
+        pos: 700, -80
+        id: plant                 
+    Button:       
+        background_down: "transparent.png"
+        background_color: 0, 0, 1, 1
+        text: "START"
+        size_hint: 0.2, 0.2
+        pos_hint: {"x":.4, "top":.6}      
+        on_release:
+            self.disabled = True
+            self.opacity = 0
+            app.start_game()
+    Label:
+        markup: True  
+        id: label1
+        height: 96
+        font_size: 40
+        font_name: 'Consola'
+        size_hint: 0.2, 0.2
+        pos_hint: {"x":.4, "top":.6} 
+          

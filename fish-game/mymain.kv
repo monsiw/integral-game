@@ -1,0 +1,39 @@
+FloatLayout:
+    Background:
+        id: background
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: "sea.jpg"                                       
+    Fish:
+        id: fish
+        source: "fish2.png"
+        size_hint: None, None
+        size: 200, 200
+        pos: 0, 0
+    Food:
+        source: "worm.png"
+        size_hint: None, None
+        size: 200, 200
+        pos: 700, 400
+        id: worm                 
+    Button:       
+        background_down: "transparent.png"
+        background_color: 0, 0, 1, 1
+        text: "START"
+        size_hint: 0.2, 0.2
+        pos_hint: {"x":.4, "top":.6}      
+        on_release:
+            self.disabled = True
+            self.opacity = 0
+            app.start_game()
+    Label:
+        markup: True  
+        id: label1
+        height: 96
+        font_size: 40
+        font_name: 'Consola'
+        size_hint: 0.2, 0.2
+        pos_hint: {"x":.4, "top":.6} 
+          

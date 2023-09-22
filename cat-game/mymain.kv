@@ -1,0 +1,52 @@
+FloatLayout:
+    Background:
+        id: background
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: "sky.png"
+            Rectangle:
+                size: self.width, 138
+                pos: self.pos[0], self.pos[1] + self.height-138
+                texture: self.cloud_texture
+            Rectangle:
+                size: self.width, 2000
+                pos: self.pos[0], self.pos[1]
+                texture: self.floor_texture                                        
+    Cat:
+        id: cat
+        source: "cat1.png"
+        size_hint: None, None
+        size: 270, 270
+        pos: 0, -70
+    Food:
+        source: "food.png"
+        size_hint: None, None
+        size: 130, 130
+        pos: 800, -10
+        id: food        
+    Sun:
+        source: "sun.png"
+        size_hint: None, None
+        size: 300, 300
+        pos: 630, 300
+        id: food          
+    Button:       
+        background_down: "transparent.png"  
+        background_color: 0, 0, 1, 1      
+        text: "START"
+        size_hint: 0.2, 0.2
+        pos_hint: {"x":.4, "top":.6}      
+        on_release:
+            self.disabled = True
+            self.opacity = 0
+            app.start_game()
+    Label:
+        markup: True  
+        id: label1
+        height: 96
+        font_size: 40
+        font_name: 'Consola'
+        size_hint: 0.2, 0.2
+        pos_hint: {"x":.4, "top":.6} 
